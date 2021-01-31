@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import coverImage from "../../assets/images/About/about_cover.jpg";
 
 function About() {

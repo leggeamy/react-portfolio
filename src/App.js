@@ -5,8 +5,8 @@ import Nav from './components/Nav';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Resume from './components/Resume';
-import Contact from './components/Contact';
-// import FooterPage from './components/Footer';
+import FooterPage from './components/Footer';
+import ContactForm from './components/Contact';
 
 export default class App extends React.Component {
   render() {
@@ -19,8 +19,9 @@ export default class App extends React.Component {
               <Route exactly component={About} pattern="/about" />
               <Route exactly component={Portfolio} pattern="/portfolio" />
               <Route exactly component={Resume} pattern="/resume" />
-              <Route exactly component={Contact} pattern="/contact" />
+              <Route exactly component={ContactForm} pattern="/contact" />
             </Switch>
+            <FooterPage></FooterPage>
           </div>
         </Router>
       </div>
