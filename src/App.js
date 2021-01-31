@@ -1,45 +1,29 @@
-import React, { useState } from 'react';
-import Nav from './components/Nav'
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Nav from './components/Nav';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
-import ContactForm from './components/Contact';
-import FooterPage from './components/Footer';
 import Resume from './components/Resume';
+import Contact from './components/Contact';
+// import FooterPage from './components/Footer';
 
-
-function App() {
-  const [categories] = useState([
-    { name: 'Portfolio', description: 'My Work' },
-    { name: 'Resume', description: 'View my Resume' },
-  ]);
-
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
-
-  const [contactSelected, setContactSelected] = useState(false);
-
-  return (
-    <div>
-      <Nav
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
-        contactSelected={contactSelected}
-        setContactSelected={setContactSelected}
-      ></Nav>
-      <main>
-        {!contactSelected ? (
-          <>
-            <Portfolio currentCategory={currentCategory}></Portfolio>
-            <About></About>
-            <Resume></Resume>
-          </>
-        ) : (
-          <ContactForm></ContactForm>
-        )}
-        <FooterPage></FooterPage>
-      </main>
-    </div>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <div>
+            <Nav />
+            <Switch>
+              <Route exactly component={About} pattern="/about" />
+              <Route exactly component={Portfolio} pattern="/portfolio" />
+              <Route exactly component={Resume} pattern="/resume" />
+              <Route exactly component={Contact} pattern="/contact" />
+            </Switch>
+          </div>
+        </Router>
+      </div>
+    );
+  }
 }
-
-export default App;

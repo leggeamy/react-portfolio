@@ -1,56 +1,31 @@
-import React, { useEffect } from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpers';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Nav(props) {
-  const {
-    categories = [],
-    setCurrentCategory,
-    contactSelected,
-    currentCategory,
-    setContactSelected,
-  } = props;
+  export default class Nav extends React.Component {
+    render() {    
+      return (
+        <nav className="Nav">
+          <div className="Nav__container">
+            <Link to="/"> </Link>
 
-  useEffect(() => {
-    document.title = capitalizeFirstLetter(currentCategory.name);
-  }, [currentCategory]);
-
-  return (
-    <header className="flex-row px-1">
-      <h2>
-        <a href="/"> Amy Legge
-        </a>
-      </h2>
-      <nav>
-        <ul className="flex-row">
-          <li className="mx-2">
-            <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>
-              About me
-            </a>
-          </li>
-          <li className={`mx-2 ${contactSelected && 'navActive'}`}>
-            <span onClick={() => setContactSelected(true)}>Contact</span>
-          </li>
-          {categories.map((category) => (
-            <li
-              className={`mx-1 ${
-                currentCategory.name === category.name && !contactSelected && 'navActive'
-                }`}
-              key={category.name}
-            >
-              <span
-                onClick={() => {
-                  setCurrentCategory(category);
-                  setContactSelected(false);
-                }}
-              >
-                {capitalizeFirstLetter(category.name)}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
-  );
-}
-
-export default Nav;
+            <div>
+              <ul>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+                <li>
+                  <Link to="/portfolio">Portfolio</Link>
+                </li>
+                <li>
+                  <Link to="/resume">Resume</Link>
+                  </li>
+                  <li>
+                  <Link to="/contact">Contact</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      );
+    }
+  }
