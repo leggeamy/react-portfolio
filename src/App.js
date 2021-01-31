@@ -6,6 +6,7 @@ import ContactForm from './components/Contact';
 import FooterPage from './components/Footer';
 import Resume from './components/Resume';
 
+
 function App() {
   const [categories] = useState([
     { name: 'Portfolio', description: 'My Work' },
@@ -28,13 +29,13 @@ function App() {
       <main>
         {!contactSelected ? (
           <>
-            <Portfolio></Portfolio>
+            <Portfolio currentCategory={currentCategory}></Portfolio>
             <About></About>
+            <Resume></Resume>
           </>
         ) : (
           <ContactForm></ContactForm>
         )}
-        <Resume></Resume>
         <FooterPage></FooterPage>
       </main>
     </div>

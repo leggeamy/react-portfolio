@@ -5,21 +5,19 @@ function Nav(props) {
   const {
     categories = [],
     setCurrentCategory,
-    currentCategory,
     contactSelected,
-    setContactSelected
+    currentCategory,
+    setContactSelected,
   } = props;
 
   useEffect(() => {
     document.title = capitalizeFirstLetter(currentCategory.name);
   }, [currentCategory]);
 
-
   return (
     <header className="flex-row px-1">
       <h2>
-        <a data-testid="link" href="/">
-          <span role="img" aria-label="camera"> 📸</span> Oh Snap!
+        <a href="/"> Amy Legge
         </a>
       </h2>
       <nav>
