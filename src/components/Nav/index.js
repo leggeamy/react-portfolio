@@ -5,21 +5,20 @@ import { Link } from 'react-router-dom';
     render() {    
       return (
         <nav className="Nav">
-          <div className="Nav__container">
-            <Link to="/"> </Link>
-
+          <div className="Nav_container">
+            <Link  to="/"> </Link>
             <div>
               <ul>
-                <li>
+                <li className="navlink">
                   <Link to="/about">About</Link>
                 </li>
-                <li>
+                <li className="navlink">
                   <Link to="/portfolio">Portfolio</Link>
                 </li>
-                <li>
+                <li className="navlink">
                   <Link to="/resume">Resume</Link>
                   </li>
-                  <li>
+                  <li className="navlink">
                   <Link to="/contact">Contact</Link>
                 </li>
               </ul>

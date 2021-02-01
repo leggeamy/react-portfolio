@@ -1,30 +1,34 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch,  } from 'react-router-dom';
 import Nav from './components/Nav';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Resume from './components/Resume';
 import FooterPage from './components/Footer';
 import ContactForm from './components/Contact';
+import Home from './components/Home'
 
-export default class App extends React.Component {
-  render() {
+function App() {
     return (
       <div className="App">
+        <main>
         <Router>
           <div>
             <Nav />
             <Switch>
-              <Route exactly component={About} pattern="/about" />
-              <Route exactly component={Portfolio} pattern="/portfolio" />
-              <Route exactly component={Resume} pattern="/resume" />
-              <Route exactly component={ContactForm} pattern="/contact" />
+              <Route exact path="/" component={Home}/>
+              <Route exact path="/about" component={About}/>
+              <Route exact path="/portfolio" component={Portfolio}/>
+              <Route exact path="/resume" component={Resume} />
+              <Route exact path="/contact" component={ContactForm} />
             </Switch>
             <FooterPage></FooterPage>
           </div>
         </Router>
+        </main>
       </div>
+    
     );
   }
-}
+
+export default App;
