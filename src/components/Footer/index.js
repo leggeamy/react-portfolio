@@ -4,7 +4,7 @@ const FooterPage = () => {
   return (
     <section>
     <div>
-
+        <container className="footerrow">
           <a href="mailto:leggeamy@gmail.com">
             <img 
             src={require("../../assets/icons/email.png").default}
@@ -25,7 +25,7 @@ const FooterPage = () => {
             alt="egithub"
             className="icon" />
             </a> 
-   
+         </container>
     </div>
   </section>
   );

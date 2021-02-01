@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
+import coverImage from "../../assets/images/contact_cover.png";
 import { validateEmail } from '../../utils/helpers';
 
 function ContactForm() {
@@ -39,7 +38,8 @@ function ContactForm() {
 
     return (
         <section>
-            <h1>Contact me</h1>
+            <img src={coverImage} style={{ width: "100%" }} alt="cover" />
+            <div className="container">
             <form id="contact-form" onSubmit={handleSubmit}>
                 {/* // name input */}
                 <div>
@@ -63,7 +63,8 @@ function ContactForm() {
                 )}
                 <button type="submit">Submit</button>
             </form>
-        </section>
+            </div>
+        </section> 
     );
 }
 

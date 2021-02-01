@@ -1,13 +1,12 @@
 import React from 'react';
 import PhotoList from '../PhotoList';
-import { capitalizeFirstLetter } from '../../utils/helpers';
-import { Link } from 'react-router-dom';
+import coverImage from "../../assets/images/portfolio_cover.png";
 
-function Portfolio(props) {
-  const { currentCategory } = props;
+
+function Portfolio() {
   return (
     <section>
-      <h1></h1>
+      <img src={coverImage} style={{ width: "100%" }} alt="cover" />
       <p></p>
       <PhotoList></PhotoList>
     </section>

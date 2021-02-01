@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import coverImage from "../../assets/images/About/about_cover.jpg";
+import coverImage from "../../assets/images/about_cover.png";
 
 function About() {
   return (
     <section>
-      <h1 id="about">About Me</h1>
       <img src={coverImage} style={{ width: "100%" }} alt="cover" />
-      <div className="my-2">
+      <div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum turpis sed ex
           condimentum molestie. Mauris condimentum lectus ut ornare dignissim. Mauris faucibus urna

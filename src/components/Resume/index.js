@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import coverImage from "../../assets/images/resume_cover.png";
+
 
 function Resume() {
   return (
     <section>
-      <h1 id="resume">Resume</h1>
-      <div className="my-2">
+      <img src={coverImage} style={{ width: "100%" }} alt="cover" />
+      <div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum turpis sed ex
           condimentum molestie. Mauris condimentum lectus ut ornare dignissim. Mauris faucibus urna

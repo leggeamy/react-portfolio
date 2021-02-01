@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
   export default class Nav extends React.Component {
     render() {    
       return (
+        <header>
+          <h2>
+            <a href="/">Amy Legge</a>
+          </h2>
         <nav className="Nav">
           <div className="Nav_container">
             <Link  to="/"> </Link>
@@ -25,6 +29,7 @@ import { Link } from 'react-router-dom';
             </div>
           </div>
         </nav>
+        </header>
       );
     }
   }
